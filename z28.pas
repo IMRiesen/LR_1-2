@@ -1,19 +1,21 @@
-﻿program zad28;
-var a,b:integer; c:string;
+Program Zad28;
+var
+  n, g: integer;
+  k: string;
 begin
-  Writeln ('Введите количество коров');
-  readln(a);
-  if a<100 then
-    begin
-    b := a mod 10;
-    case b of
-      1 : c := 'корова';
-      2..4 : c := 'коровы';
-      5..9 : c := 'коров';
-      0 : c := 'коров';
+  writeln('Введите число коров:');
+  readln(n);
+  
+  g := n mod 10;
+  
+  if (n mod 100) in [11..14] then
+    k := 'коров'
+  else
+    case g of
+      1: k := 'корова';
+      2..4: k := 'коровы';
+      5..9, 0: k := 'коров';
     end;
-    writeln('На лугу пасется ', a, ' ', c,'.');
-    end;
-    if a>100 then
-      writeln('Коров должно быть меньше 100!');
+  
+  writeln('На лугу пасется ', n, ' ', k);
 end.
